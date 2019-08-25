@@ -3,12 +3,14 @@ package com.mateus.batista.domain.core
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
-abstract class UserCase<T, in Params>(private val scope: CoroutineScope) {
+abstract class UseCase<T, in Params>(private val scope: CoroutineScope) : KoinComponent {
 
-    private val contextProvider = ThreadContextProvider()
+    private val contextProvider: ThreadContextProvider by inject()
 
-    abstract suspend fun run(params: Params?) : Response<T>
+    abstract suspend fun run(params: Params? = null) : Response<T>
 
     fun execute(
         params: Params? = null,

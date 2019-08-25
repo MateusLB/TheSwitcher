@@ -1,29 +1,29 @@
-apply plugin: 'com.android.application'
-
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion compile_sdk_version
     buildToolsVersion build_tools_version
+
+
     defaultConfig {
-        applicationId "com.mateus.batista.theswitcher"
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
-        versionCode version_code
-        versionName version_name
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    implementation project(':di')
-    appDependencies.each { add(it.configuration, it.dependency, it.options) }
+    implementation project(':domain')
+    implementation project(':data')
+
+    diDependencies.each { add(it.configuration, it.dependency, it.option) }
 }

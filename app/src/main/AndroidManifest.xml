@@ -3,6 +3,7 @@
     package="com.mateus.batista.theswitcher">
 
     <application
+        android:name=".SwitcherApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
