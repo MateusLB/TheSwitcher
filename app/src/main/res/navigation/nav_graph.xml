@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listRoomsFragment">
+
+    <fragment
+        android:id="@+id/listRoomsFragment"
+        android:name="com.mateus.batista.theswitcher.core.list.ListRoomsFragment"
+        android:label="@string/list_title"
+        tools:layout="@layout/list_rooms_fragment" >
+        <action
+            android:id="@+id/action_listRoomsFragment_to_detailsRoomFragment"
+            app:destination="@+id/detailsRoomFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_close_enter"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsRoomFragment"
+        android:name="com.mateus.batista.theswitcher.core.details.DetailsRoomFragment"
+        tools:layout="@layout/fragment_details_room" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="isLightOn"
+            app:argType="boolean" />
+    </fragment>
+</navigation>

@@ -19,7 +19,11 @@ ext{
     coroutine_version = '1.3.0'
     koin_version = '2.0.1'
     mockito_koin_version = '2.0.0'
-
+    view_model_version = '2.0.0'
+    nav_version = '2.2.0-alpha01'
+    ktx_version = '1.2.0-alpha01'
+    meterial_version = '1.0.0'
+    recyclerview_version = '1.0.0'
 
 
     //Android
@@ -48,6 +52,23 @@ ext{
     koin_scope = "org.koin:koin-androidx-scope:$koin_version"
     koin_viewModel = "org.koin:koin-androidx-viewmodel:$koin_version"
 
+    //viewModel
+    view_model = "androidx.lifecycle:lifecycle-extensions:$view_model_version"
+
+    // navigation
+    navigation_fragment =  "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    navigation_ui = "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //ktx
+    ktx = "androidx.core:core-ktx:$ktx_version"
+
+    //material
+    meterial = "com.google.android.material:material:$meterial_version"
+
+    //ui
+    recyclerview =  "androidx.recyclerview:recyclerview:$recyclerview_version"
+    support_design =  "com.android.support:design:$build_tools_version"
+
 
     //Dependencies
     commonsDependencies = [
@@ -55,6 +76,7 @@ ext{
         [configuration: "implementation", dependency: "$kotlin"],
         [configuration: "implementation", dependency: "$core_ktx"],
         [configuration: "implementation", dependency: "$coroutine"],
+        [configuration: "implementation", dependency: "$koin_android"],
         [configuration: "testImplementation", dependency: "$junit"],
         [configuration: "testImplementation", dependency: "$koin_test"],
         [configuration: "testImplementation", dependency: "$kotlin_junit"],
@@ -66,22 +88,25 @@ ext{
             [configuration: "implementation", dependency: "$appcompat"],
             [configuration: "implementation", dependency: "$core_ktx"],
             [configuration: "implementation", dependency: "$constraintlayout"],
-            [configuration: "implementation", dependency: "$koin_android"],
+            [configuration: "implementation", dependency: "$koin_viewModel"],
+            [configuration: "implementation", dependency: "$view_model"],
+            [configuration: "implementation", dependency: "$navigation_fragment"],
+            [configuration: "implementation", dependency: "$navigation_ui"],
+            [configuration: "implementation", dependency: "$ktx"],
+            [configuration: "implementation", dependency: "$meterial"],
+            [configuration: "implementation", dependency: "$recyclerview"],
+            [configuration: "implementation", dependency: "$support_design"],
             [configuration: "androidTestImplementation", dependency: "$test_runner"],
             [configuration: "androidTestImplementation", dependency: "$espresso"]
     ]
     diDependencies = commonsDependencies + [
             [configuration: "implementation", dependency: "$koin_scope"],
-            [configuration: "implementation", dependency: "$koin_android"],
             [configuration: "implementation", dependency: "$koin_viewModel"]
     ]
     
-    domainDependencies = commonsDependencies + [
-            [configuration: "implementation", dependency: "$koin_android"]
-    ]
+    domainDependencies = commonsDependencies + []
 
     dataDependencies = commonsDependencies + [
-            [configuration: "implementation", dependency: "$koin_android"],
             [configuration: "implementation", dependency: "$gson"]
     ]
 }

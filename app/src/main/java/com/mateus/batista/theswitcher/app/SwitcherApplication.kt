@@ -1,4 +1,4 @@
-package com.mateus.batista.theswitcher
+package com.mateus.batista.theswitcher.app
 
 import android.app.Application
 import com.mateus.batista.di.domainModule
@@ -14,7 +14,7 @@ class SwitcherApplication : Application() {
         super.onCreate()
         startKoin{
             androidContext(this@SwitcherApplication)
-            modules(listOf(domainModule, localDataModule, repositoryModule, serviceModule))
+            modules(listOf(domainModule, localDataModule, repositoryModule, serviceModule, viewModelModule))
         }
     }
 }

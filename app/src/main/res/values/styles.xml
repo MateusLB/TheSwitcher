@@ -1,11 +1,56 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorControlNormal">@color/white</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FontParent">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- TexView White -->
+    <style name="TextViewWhite" parent="FontParent">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextViewWhite14spNormal" parent="TextViewWhite">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextViewWhite18spNormal" parent="TextViewWhite">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- TexView colorPrimary -->
+    <style name="TextViewPrimary" parent="FontParent">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextViewPrimary16spNormal" parent="TextViewPrimary">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- TexView black -->
+    <style name="TextViewBlack" parent="FontParent">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextViewBlack14spNormal" parent="TextViewBlack">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextViewBlack16spNormal" parent="TextViewBlack">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
 </resources>
