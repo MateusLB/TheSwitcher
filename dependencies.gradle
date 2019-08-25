@@ -81,6 +81,7 @@ ext{
     ]
 
     dataDependencies = commonsDependencies + [
+            [configuration: "implementation", dependency: "$koin_android"],
             [configuration: "implementation", dependency: "$gson"]
     ]
 }
