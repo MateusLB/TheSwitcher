@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">TheSwitcher_MateusBatista</string>
-    <string name="cancel">Não</string>
-    <string name="ok">Sim</string>
-    <string name="error_title">Oops, algo deu errado</string>
-    <string name="error_description">%1$s. Tentar novamente?</string>
+    <string name="cancel">No</string>
+    <string name="ok">Yes</string>
+    <string name="error_title">Oops, something went wrong</string>
+    <string name="error_description">%1$s. Try again?</string>
+    <string name="detail_room">Your %1$s light is</string>
+    <string name="light_on">ON</string>
+    <string name="light_off">OFF</string>
     <string name="list_title">Switcher APP</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

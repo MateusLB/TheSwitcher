@@ -1,8 +1,6 @@
 package com.mateus.batista.theswitcher.core.list
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -54,6 +52,11 @@ class ListRoomsFragment : BaseFragment(), OnItemClickListener<Room> {
     }
 
     override fun onItemClick(item: Room, position: Int) {
-        navController.navigate(ListRoomsFragmentDirections.actionListRoomsFragmentToDetailsRoomFragment(item.name, item.isLightOn))
+        navController.navigate(
+            ListRoomsFragmentDirections.actionListRoomsFragmentToDetailsRoomFragment(
+                item.name,
+                item.isLightOn
+            )
+        )
     }
 }

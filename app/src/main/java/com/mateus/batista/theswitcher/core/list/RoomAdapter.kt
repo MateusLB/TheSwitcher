@@ -10,8 +10,8 @@ import com.mateus.batista.theswitcher.base.listeners.OnItemClickListener
 import kotlinx.android.synthetic.main.item_room.view.*
 
 class RoomAdapter(
-    val list: List<Room>,
-    val listener: OnItemClickListener<Room>
+    private val list: List<Room>,
+    private val listener: OnItemClickListener<Room>
 ) : RecyclerView.Adapter<RoomAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,11 +25,15 @@ class RoomAdapter(
         holder.bindItemView(item){ listener.onItemClick(item, position) }
     }
 
-    inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         fun bindItemView(item: Room, onItemClick: () -> Unit) {
             view.apply {
                 nameText.text = item.name
                 lightSwitch.isChecked = item.isLightOn
+
+                lightSwitch.setOnCheckedChangeListener { _, isChecked ->
+                    item.isLightOn = isChecked
+                }
                 setOnClickListener { onItemClick() }
             }
         }

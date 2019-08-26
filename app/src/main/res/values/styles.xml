@@ -53,4 +53,9 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="TextViewBlack32spBold" parent="TextViewBlack">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>
